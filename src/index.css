@@ -1,13 +1,342 @@
-body {
+/* apply a natural box layout model to all elements, but allowing components to change */
+*,
+html {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
+
+
+/* 2. General settings */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End */
+
+/* Fonts */
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+/* Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+/* End */
+
+:root {
+  --font01: 'Nunito', sans-serif;
+  --font02: 'Cairo', sans-serif;
+  --color01: #38A3A5;
+  --color02: #c7f4f5;
+  --color03: #393E46;
+  --color04: #FFEF78;
+}
+
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*? Component:::: Navbar */
+/** Mobil Screen */
+.navbar {
+  font-family: var(--font01);
+  background-color: var(--color01);
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+
+.nav-main {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-about {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: var(--color02);
+}
+
+.nav-link i {
+  margin-left: .3rem;
+}
+
+/** Tablet Screen */
+@media only screen and (min-width: 768px) {
+  .nav-link {
+    font-size: 2.1rem;
+  }
+}
+
+/** Pc Screen */
+@media only screen and (min-width: 1366px) {
+  .nav-main {
+    justify-content: left;
+    margin-left: 8rem;
+  }
+
+  .nav-link {
+    margin-right: 3rem;
+  }
+
+  .nav-link:hover {
+    color: var(--color04);
+  }
+
+  .nav-link i {
+    margin-left: .5rem;
+  }
+}
+
+/*? <------End: Component:::: Navbar */
+
+
+/*? View:::: MainPage */
+/*? <------End: View:::: MainPage */
+
+/*? View:::: Search Page */
+/** Mobil Screen */
+
+.search-page {
+  font-family: var(--font02);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-page h2 {
+  color: var(--color03);
+  font-size: 2rem;
+}
+
+.search-page h2 i {
+  color: var(--color01);
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  align-items: center;
+}
+
+/** Tablet Screen */
+@media only screen and (min-width: 768px) {
+
+  .search-page h2 {
+    font-size: 3rem;
+  }
+
+  .search-page h2 i {
+    font-size: 3.2rem;
+  }
+
+}
+
+/** Pc Screen */
+@media only screen and (min-width: 1366px) {
+
+  .search-page h2 {
+    font-size: 4rem;
+  }
+
+  .search-page h2 i {
+    font-size: 5rem;
+  }
+}
+
+/** Component:::: Form  */
+/** Mobil Screen */
+.form {
+  font-family: var(--font02);
+  margin-top: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-control {
+  margin-right: .2rem;
+  border-radius: 8px;
+  width: 70%;
+  height: 4.5vh;
+  border: solid 1px var(--color01);
+  text-align: center;
+  color: #50565f;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+
+.btn-search {
+  border-radius: 8px;
+  width: 30%;
+  border: solid 1px var(--color01);
+  background-color: var(--color01);
+  color: var(--color02);
+  font-size: 1.2rem;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.alert {
+  background-color: #FF4848;
+  margin-top: .5rem;
+  padding: .3rem 1.2rem .3rem 1.2rem;
+  font-size: .7rem;
+  font-weight: 200;
+  color: #fff;
+}
+
+.alert i {
+  margin-left: .5rem;
+}
+
+/*?Card of Countries */
+.card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  font-family: var(--font02);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  border-top: solid 5px #38A3A5;
+  border-bottom: solid 5px #38A3A5;
+  border-radius: 12px;
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card-p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color03);
+}
+
+.btn-more {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: .3rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color04);
+  color: var(--color03);
+
+}
+
+
+
+/** Tablet Screen */
+@media only screen and (min-width: 768px) {
+  .form-control {
+    height: 5vh;
+    font-size: 1.4rem;
+  }
+
+  .form-control {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .btn-search {
+    font-size: 1.8rem;
+  }
+
+  .alert {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-top: solid 10px #38A3A5;
+    border-bottom: solid 10px #38A3A5;
+  }
+
+  .btn-more {
+    padding: 1rem;
+    font-size: 2rem;
+    border: solid 2px var(--color04);
+  }
+
+}
+
+/** Pc Screen */
+@media only screen and (min-width: 1366px) {
+  .form-control {
+    height: 6vh;
+    font-size: 1.7rem;
+  }
+
+  .btn-search {
+    font-size: 1.7rem;
+  }
+
+  .btn-search:hover {
+    background-color: #298586;
+    border: solid 1px #298586;
+    color: #fff;
+    transition: all .3s;
+  }
+
+  .alert {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .alert i {
+    margin-left: .5rem;
+  }
+
+  .card {
+    margin-top: 3rem;
+    width: 40%;
+  }
+
+  .card-img{
+    max-height: 21rem;
+  }
+
+  .card-p {
+    font-size: 3rem;
+  }
+
+  .btn-more {
+    transition: all .5s ease;
+    font-size: 2rem;
+    padding: .5rem;
+  }
+
+  .btn-more:hover {
+    border: solid 2px var(--color01);
+    background-color: #FCFFA6;
+    color: rgb(65, 45, 45);
+  }
+
+
+}
+
+
+/*? <------End: View:::: Search Page */
