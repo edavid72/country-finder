@@ -12,7 +12,7 @@ const DetailsPage = ({ history }) => {
 
         const response = await fetch(url);
         const result = await response.json();
-        
+
         //!Send the API data to the state 'detailsCountry'  */
         setDetailsCountry(result[0]);
       } catch (e) {
@@ -22,10 +22,17 @@ const DetailsPage = ({ history }) => {
     consultAPICountries();
   }, [country]);
 
-  const { flag, name, capital, subregion, population, borders, nativeName } =
-    detailsCountry;
-
-  console.log(`pais: ${name} y Ciudad: ${capital}`);
+  const {
+    flag,
+    name,
+    capital,
+    demonym,
+    languages,
+    subregion,
+    population,
+    borders,
+    nativeName,
+  } = detailsCountry;
 
   //Todo:Button Back
   const handleClickBack = () => {
@@ -38,6 +45,23 @@ const DetailsPage = ({ history }) => {
         <div>
           <button onClick={handleClickBack}>Back</button>
         </div>
+
+        <div className="card-country">
+          <div className="card-flag">
+            <img src={flag} alt="flag" />
+          </div>
+          <div className="card-data-country">
+            <h2>{name}</h2>
+            <p>
+              Capital: <span>{capital}</span>
+            </p>
+            <p>
+              Demonym: <span>{demonym}</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card-weather"></div>
       </div>
     </>
   );
