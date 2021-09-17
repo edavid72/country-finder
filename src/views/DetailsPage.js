@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 
 const DetailsPage = ({ history }) => {
   const { country } = useParams();
+
   const [detailsCountry, setDetailsCountry] = useState([]);
 
   useEffect(() => {
@@ -26,12 +27,11 @@ const DetailsPage = ({ history }) => {
     flag,
     name,
     capital,
-    demonym,
     languages,
     subregion,
-    population,
     borders,
     nativeName,
+    currencies,
   } = detailsCountry;
 
   //Todo:Button Back
@@ -42,8 +42,10 @@ const DetailsPage = ({ history }) => {
   return (
     <>
       <div className="container">
-        <div>
-          <button onClick={handleClickBack}>Back</button>
+        <div className="back-contain">
+          <button onClick={handleClickBack} className="btn-back">
+            Back
+          </button>
         </div>
 
         <div className="card-country">
@@ -52,12 +54,58 @@ const DetailsPage = ({ history }) => {
           </div>
           <div className="card-data-country">
             <h2>{name}</h2>
-            <p>
-              Capital: <span>{capital}</span>
-            </p>
-            <p>
-              Demonym: <span>{demonym}</span>
-            </p>
+            <div className="data-country">
+              <p>
+                <i className="far fa-flag"></i>
+                Native Name: <span>{nativeName}</span>
+              </p>
+
+              <p>
+                <i className="fab fa-fort-awesome-alt"></i>
+                Capital: <span>{capital}</span>
+              </p>
+
+              <p>
+                <i className="fas fa-globe-americas"></i>
+                Sub Region: <span>{subregion}</span>
+              </p>
+
+              <div>
+                <p>
+                  <i className="fas fa-border-style"></i>Borders:{' '}
+                </p>
+                <ul>
+                  {borders &&
+                    borders.map((border) => {
+                      return <li key={border}>{`${border}`}</li>;
+                    })}
+                </ul>
+              </div>
+
+              <div>
+                <p>
+                  <i className="fas fa-language"></i>Languages:{' '}
+                </p>
+                <ul>
+                  {languages &&
+                    languages.map((language) => {
+                      return <li key={language.iso639_1}>{language.name}</li>;
+                    })}
+                </ul>
+              </div>
+
+              <div>
+                <p>
+                  <i className="fas fa-money-bill-wave"></i>Currencies:{' '}
+                </p>
+                <ul>
+                  {currencies &&
+                    currencies.map((currency) => {
+                      return <li key={currency.name}>{currency.name}</li>;
+                    })}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
