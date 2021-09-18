@@ -7,7 +7,7 @@ const Form = ({ setDataForm }) => {
 
   //! Read the search term, every time it changes */
   const handleChangeForm = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value.trim());
   };
 
   const handleSubmitForm = (e) => {
