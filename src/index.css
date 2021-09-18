@@ -109,6 +109,72 @@ a {
 
 
 /*? View:::: MainPage */
+.main-flags {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.flags {
+  font-family: var(--font01);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.flag {
+  width: 100%;
+  height: 100%;
+}
+
+.flags h2 {
+  width: 60%;
+  background-color: #343a40ce;
+  color: var(--color02);
+  position: absolute;
+  text-align: center;
+  padding: .5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .flags h2 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .flags {
+    width: 20%;
+    padding: .5rem;
+  }
+
+  .flag {
+    width: 100%;
+  }
+
+  .flags h2 {
+    font-size: 1.5rem;
+    width: 15%;
+    position: absolute;
+  }
+}
+
+
+
 /*? <------End: View:::: MainPage */
 
 /*? View:::: Search Page */
@@ -173,7 +239,7 @@ a {
 
 .form-control {
   margin-right: .2rem;
-  border-radius: 8px;
+  /*  border-radius: 8px; */
   width: 70%;
   height: 4.5vh;
   border: solid 1px var(--color01);
@@ -184,7 +250,7 @@ a {
 }
 
 .btn-search {
-  border-radius: 8px;
+  /* border-radius: 8px; */
   width: 30%;
   border: solid 2px var(--color01);
   background-color: var(--color01);
@@ -220,14 +286,14 @@ a {
   padding: .5rem;
   border-top: solid 5px var(--color01);
   border-bottom: solid 5px var(--color01);
-  border-radius: 12px;
+  /* border-radius: 12px; */
   margin-top: 1rem;
   width: 90%;
 }
 
 .card-img {
   width: 100%;
-  border-radius: 12px;
+  /*  border-radius: 12px; */
 }
 
 .card-p {
@@ -243,7 +309,7 @@ a {
   font-weight: bold;
   padding: .3rem;
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background-color: var(--color01);
   color: var(--color02);
 
@@ -315,10 +381,11 @@ a {
   .card {
     margin-top: 3rem;
     width: 40%;
+    height: 30rem;
   }
 
   .card-img {
-    max-height: 21rem;
+    max-height: 18rem;
   }
 
   .card-p {
@@ -327,7 +394,7 @@ a {
 
   .btn-more {
     transition: all .5s ease;
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: .5rem;
   }
 
@@ -349,12 +416,20 @@ a {
 }
 
 .btn-back {
+  cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
   font-family: var(--font02);
   padding: 0 3rem;
-  background-color: var(--color02);
+  background-color: var(--color01);
   border: solid 2px var(--color01);
+  color: var(--color02);
+}
+
+.btn-back:hover {
+  background-color: var(--color02);
+  color: var(--color01);
+  transition: all 300ms ease;
 }
 
 .card-country {
@@ -485,14 +560,122 @@ a {
   }
 }
 
+.head-card {
+  font-family: var(--font02);
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem;
+  background-color: #716F81;
+  color: #FFFFFF;
+}
+
+.info-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+  width: 60%;
+  font-size: 1rem;
+  color: var(--color02);
+}
+
+.info-one h2 {
+  color: var(--color02);
+  font-size: 1.3rem;
+}
+
+.info-one h3 {
+  font-size: 1rem;
+}
+
+.info-one p {
+  font-size: 1rem;
+}
+
+.info-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  width: 40%;
+}
+
+.info-two p {
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .info-one h2 {
+    font-size: 2.5rem;
+  }
+
+  .info-one h3 {
+    font-size: 2rem;
+  }
+
+  .info-one p {
+    font-size: 2rem;
+  }
+
+  .info-two p {
+    font-size: 2rem;
+  }
+
+  .info-two i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .head-card {
+    width: 40%;
+  }
+
+  .card-data-country {
+    width: 60%;
+  }
+
+  .info-one {
+    width: 63%;
+  }
+
+  .info-two {
+    width: 37%;
+  }
+
+  .info-one h2 {
+    font-size: 2.2rem;
+  }
+
+  .info-one h3 {
+    font-size: 1.8rem;
+  }
+
+  .info-two p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
 /*? <------End: View:::: Search Page */
 
 
 /* View:::: About */
 
+
+
 .about-section {
+  font-family: var(--font02);
   width: 80%;
   margin: 0 auto;
+  color: var(--color01);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-image {
@@ -506,8 +689,79 @@ a {
   border: 7px solid var(--color01);
 }
 
-.about-section h2{
+.about-section h2 {
   text-align: center;
   font-family: var(--font01);
   margin-top: 1rem;
+}
+
+.about-section h3 {
+  text-align: center;
+}
+
+.about-section p {
+  text-align: center;
+}
+
+.techs {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.techs i {
+  color: var(--color01);
+  font-size: 3rem;
+  padding: .5rem;
+}
+
+.contact {
+  padding: .1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color01);
+  color: var(--color02);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact-p {
+  font-size: 1.7rem;
+}
+
+.contact a i {
+  color: var(--color02);
+  font-size: 2.2rem;
+  padding: .5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-section h3 {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (min-width: 1366px) {
+    .contact{
+      width: 40%;
+    }
+    
+    .contact a i {
+      color: var(--color02);
+      font-size: 2.2rem;
+      padding: .5rem;
+    }
+  }
+
 }

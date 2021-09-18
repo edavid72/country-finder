@@ -34,7 +34,7 @@ const SearchPage = () => {
 
   return (
     <>
-      <div className="container search-page">
+      <div className="container search-page animate__animated animate__bounceInLeft">
         <h2>
           <i className="fas fa-atlas"></i>Find Country Here
         </h2>

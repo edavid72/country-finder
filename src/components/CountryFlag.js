@@ -2,19 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CountryFlag = ({ dataAPI }) => {
+  const { name, flag } = dataAPI;
+
+  /* console.log(name, flag); */
   return (
     <>
-      <div className="card">
-        <img src={dataAPI.flag} alt="flag" className="card-img" />
-        <p className="card-p">{dataAPI.name}</p>
+      <div className="card animate__animated animate__bounceInUp">
+        <img src={flag} alt="flag" className="card-img" />
+        <p className="card-p">{name}</p>
 
-        <Link
-          to={`/detailspage/${dataAPI.name}`}
-          type="button"
-          className="btn-more"
-        >
-          See More
-          <i className="fas fa-chevron-right"></i>
+        <Link to={`/detailspage/${name}`} type="button" className="btn-more">
+          More info
         </Link>
       </div>
     </>
