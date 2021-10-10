@@ -4,7 +4,7 @@ const MainPage = () => {
   const [mainFlags, setMainFlags] = useState([]);
   useEffect(() => {
     const mainContent = async () => {
-      const url = `https://restcountries.eu/rest/v2/all`;
+      const url = `https://restcountries.com/v2/all`;
 
       const response = await fetch(url);
       const result = await response.json();

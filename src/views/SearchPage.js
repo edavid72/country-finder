@@ -15,7 +15,7 @@ const SearchPage = () => {
       //!Avoid "GET API" action when loading the page for the first time
       if (dataForm === '') return;
 
-      const url = `https://restcountries.eu/rest/v2/name/${dataForm}?fullText=true`;
+      const url = `https://restcountries.com/v2/name/${dataForm}?fullText=true`;
 
       const response = await fetch(url);
       const result = await response.json();

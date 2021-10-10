@@ -10,7 +10,7 @@ const DetailsPage = ({ history }) => {
   useEffect(() => {
     const consultAPICountries = async () => {
       try {
-        const url = `https://restcountries.eu/rest/v2/name/${country}?fullText=true`;
+        const url = `https://restcountries.com/v2/name/${country}?fullText=true`;
 
         const response = await fetch(url);
         const result = await response.json();
@@ -49,15 +49,15 @@ const DetailsPage = ({ history }) => {
       setDetailsWeather(result);
     };
     consultAPIWeather();
-  }, [alpha2Code,country,detailsCountry]);
+  }, [alpha2Code, country, detailsCountry]);
 
   const { weather, main, id } = detailsWeather;
 
- /*  console.log(main); */
+  /*  console.log(main); */
   //Todo:Button Back
   const handleClickBack = () => {
     /* history.push('/searchpage'); */
-    history.goBack()
+    history.goBack();
   };
 
   return (
